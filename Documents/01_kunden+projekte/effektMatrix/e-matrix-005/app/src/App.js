@@ -32,7 +32,7 @@ class App extends Component {
   // axios.get('http://localhost:9000/getMatrices')
       axios.get('http://localhost:9000/getMatrices')
       .then(response =>{
-        console.log(response);
+      //console.log(response);
       })
       .catch(err=>{
         console.log('Fehler: ' ,err);
@@ -85,7 +85,7 @@ saveMatrix(e) {
     return (
 
       < Container />
-    
+
     );
   }
 }

@@ -1,3 +1,6 @@
+
+
+
 let envelopFunction01 = function(xx,ep){
       let pitch = (ep[1]-ep[0])/2;
       let axisSection = ep[1]-(2*pitch);
@@ -139,7 +142,7 @@ let getKeyArray = (type,c,ep,fileBuffer)=>{
         }
     break;
     default:
-
+        bufferSound = [type]
     }
 
     return bufferSound;

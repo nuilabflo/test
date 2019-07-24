@@ -34,10 +34,14 @@ class MasterElement extends Component{
           envelopRight: [{left:-4,top:-4},{left:21,top:-4},{left:46,top:-4},{left:71,top:-4},{left:96,top:-4},'right'],
           envelopBases:{envelopLeft:0,envelopRight:0},
           envelopArrays: {left: undefined, right: undefined},
+
         },
         database: [],
+        databaseSound:[],
         consoleSwitch:'',
-        saveValue:''
+        saveValue:'',
+        embeddedSound:[]
+        //embeddedSounds:{l:undefined,}
       }
       this.change = this.change.bind(this);
       this.getFileInfo = this.getFileInfo.bind(this);
@@ -50,6 +54,7 @@ class MasterElement extends Component{
       this.handleConsoleChange =this.handleConsoleChange.bind(this);
       this.handleConsoleSubmit = this.handleConsoleSubmit.bind(this);
       this.getDataBaseContent = this.getDataBaseContent.bind(this);
+      this.embedSound = this.embedSound.bind(this);
     }
 
     componentDidMount(){
@@ -60,6 +65,15 @@ class MasterElement extends Component{
       axios.get(API_URL+'getMatrices')
       .then(response =>{
         this.setState({database:response.data});
+      })
+      .catch(err=>{
+        console.log('Fehler: ' ,err);
+      });
+
+      axios.get(API_URL+'getEmbeddedSounds')
+      .then(response =>{
+        response.data.map(soundname=>typeArray.push(soundname.soundName));
+        this.setState({databaseSound:response.data});
       })
       .catch(err=>{
         console.log('Fehler: ' ,err);
@@ -86,6 +100,10 @@ class MasterElement extends Component{
         newContent.filetime[0] = undefined;
         newContent.leftTopD = 0.1;
         newContent.envelopBases.envelopLeft=0;
+        let embedded = this.state.databaseSound.find(myset=>{return myset.soundName == e.target.value})
+        if(embedded){
+         newContent.envelopBases.envelopLeft=embedded.envBase;
+        }
       }
       if(e.target.name === 'rightTopT'){
         newContent.file.rightTopT = undefined;
@@ -95,10 +113,12 @@ class MasterElement extends Component{
         newContent.envelopBases.envelopRight=0;
       }
 
+      //console.log(this.state.databaseSound.find(myset=>{return myset.soundName == e.target.value}));
+
       this.setState({
         content: newContent
       }, () => {this.callback();})
-
+      console.log('env: ',this.state.content.envelopBases,"arrays:", this.state.content.envelopArrays);
 
       if(newValue ==='file'){
         document.getElementById('myFileInput').click();
@@ -124,6 +144,8 @@ class MasterElement extends Component{
 
 
     getFileInfo(e){
+
+
 
       if(e.target.files[0]){
         let myFiles = this.state.content;
@@ -167,14 +189,39 @@ class MasterElement extends Component{
             }
 
             that.setState({content: newContent}, () => {that.callback();});
-
+            that.embedSound(that.currentInput,soundName,dd);
           })
         };
 
         reader.readAsArrayBuffer(file);
       }
+      let soundName = prompt("Please enter a name for the embedded sound", "my sound");
+    //  this.embedSound(this.currentInput,soundName);
 
     }
+
+
+    embedSound(side,name,duration){
+      let body = {}
+      body.soundName = name;
+      body.fileBuffer = this.state.content.fileBuffer[side];
+      body.duration = duration
+      if(side === 'leftTopT'){
+        body.envBase = this.state.content.envelopBases.envelopLeft;
+      }else{
+        body.envBase = this.state.content.envelopBases.envelopRight;
+      }
+
+      // axios.post('http://localhost:9000/newEmbeddedSound',)
+      axios.post(API_URL+'newEmbeddedSound',body).then(response =>{
+
+        alert(response.data.message)
+      })
+      .catch(err=>{
+        console.log('Fehler: ' ,err);
+      })
+    }
+
 
     activHandler=undefined;
     activBounding=undefined;
@@ -193,7 +240,7 @@ class MasterElement extends Component{
         if(this.activHandler){
           let id = this.activHandler.id;
           let index = Number(id.substring(id.length-2,id.length));
-          let parent = this.activBounding
+          let parent = this.activBounding;
           let parentIndex = Number(parent.id.substring(parent.id.length-2,parent.id.length));
           let bounds = parent.getBoundingClientRect()
 
@@ -331,6 +378,7 @@ class MasterElement extends Component{
       let ltd = this.state.content.leftTopD;
       let mcl = keyArrays.getKeyArray(ltt,lthz,[1,1],ltfb);
       let newMcl=[];
+      let envBL = 0;
 
       let rtt = this.state.content.rightTopT;
       let rthz= this.state.content.rightTopHz*this.state.content.rightTopD;
@@ -338,6 +386,21 @@ class MasterElement extends Component{
       let rtd = this.state.content.rightTopD;
       let mcr = keyArrays.getKeyArray(rtt,rthz,[1,1],rtfb);
       let newMcr=[];
+
+
+      if(typeof mcl[0] === 'string'){
+
+          let mySoundData = this.state.databaseSound;
+
+          mySoundData.map(data=>{
+            if(data.soundName === mcl[0]){
+              ltd = data.duration;
+
+              return mcl = data.fileBuffer;
+            }
+          })
+
+      }
 
       if(this.state.content.envelopArrays.left){
             for(let i=0; i <mcl.length;i++){
@@ -356,6 +419,8 @@ class MasterElement extends Component{
 
 
       let grid = [];
+      grid.length = this.state.content.columns;
+
       let env = '';
       let ec = undefined;
       for(let i =1; i<= this.state.content.columns; i++){
@@ -394,10 +459,14 @@ class MasterElement extends Component{
             <div className='handle' id='handle05' style={this.state.content.envelopRight[4]} onMouseDown={this.startDragHandler} ></div>
           </div>
           envelopValues =this.state.content.envelopRight;
-        }else{
+        }
+        else{
           env = ''
           if(newMcl.length>0){
             mcl = newMcl;
+          }
+          if(newMcr.length>0){
+            mcr = newMcr;
           }
           cc = calcArrays.getSingleLine(mcl,mcr,this.state.content.columns,i-1)
           tt = calcArrays.getSingleTime(ltd,rtd,this.state.content.columns,i-1);
@@ -410,13 +479,14 @@ class MasterElement extends Component{
                   {env}
                 </div>
 
-        grid.push(myc)
+        grid[i] = myc
       }
+
 
 
       let { database } = this.state;
       let consoleContent = [];
-      // let mySwitch = 'open';
+
 
       if(this.state.consoleSwitch==='open'){
           consoleContent.push(<p key =' 0'>Effektset öffnen</p>);
@@ -450,7 +520,7 @@ class MasterElement extends Component{
               <div className='subElement'>
                 <InputSelect name='rightTopHz' range={300} step={[5,5]} label='Herz rightTop' onchange={this.change} myValue={this.state.content.rightTopHz}/>
                 <InputSelect name='rightTopT'range={typeArray} label='Type rightTop' onchange={this.change} myValue={this.state.content.rightTopT}/>
-                <InputSelect name='rightTopD'range={3.1} step={[0.1,0.1,this.state.content.filetime[1]]}label='Duration rightTop' onchange={this.change} myValue={this.state.content.rightTopD} id='rightTopD'/>
+                <InputSelect name='rightTopD'range={3.1} step={[0.1,0.1,this.state.content.filetime[1]]} label='Duration rightTop' onchange={this.change} myValue={this.state.content.rightTopD} id='rightTopD'/>
               </div>
               </div>
               <div className='gridelements'>
@@ -480,8 +550,4 @@ class MasterElement extends Component{
 
 }
 
-// <div className="fileConsoleButton" ref="fileConsoleButton" onClick={this.openFileConsole}>o</div>
-
-//document.getElementById('myFileInput').click();
-// <input type="file" id="audioFile" name="avatar" accept="audio/mpeg, audio/wav">
 export default MasterElement;
