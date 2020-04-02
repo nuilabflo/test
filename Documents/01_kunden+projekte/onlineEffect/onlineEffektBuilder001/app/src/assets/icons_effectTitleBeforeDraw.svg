@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <clipPath id="clip-icons_effectTitleBeforeDraw">
+      <rect width="25" height="25"/>
+    </clipPath>
+  </defs>
+  <g id="icons_effectTitleBeforeDraw" clip-path="url(#clip-icons_effectTitleBeforeDraw)">
+    <g id="Gruppe_325" data-name="Gruppe 325" transform="translate(-9852 83)">
+      <path id="Pfad_280" data-name="Pfad 280" d="M49.855,26.413l-4.416,1.594,1.584-4.419Z" transform="translate(9811.561 -91)"/>
+      <rect id="Rechteck_245" data-name="Rechteck 245" width="9.899" height="4" transform="translate(9859.586 -68.414) rotate(-45)"/>
+      <rect id="Rechteck_246" data-name="Rechteck 246" width="1.41" height="4.001" transform="translate(9867.59 -76.419) rotate(-44.822)"/>
+    </g>
+  </g>
+</svg>

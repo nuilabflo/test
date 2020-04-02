@@ -1,0 +1,186 @@
+:root {
+  --maincolor: rgb(47, 20, 255);
+  --subcolor: rgb(237, 233, 255);
+  --subcolor2: rgb(237, 233, 255);
+  --hovercolor: rgb(87, 65, 255);
+}
+
+@font-face {
+  font-family: "DillonRegular";
+  src: url("../assets/font/FSDillonWeb-Regular.woff") format("woff"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "DillonMedium";
+  src: url("../assets/font/FSDillonWeb-Medium.woff") format("woff"); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: "DillonMediumItalic";
+  src: url("../assets/font/FSDillonWeb-MediumItalic.woff") format("woff"); /* IE9 Compat Modes */
+}
+
+html {
+  font-family: "DillonRegular", Helvetica, sans-serif;
+  line-height: 1.25rem;
+}
+
+p {
+  line-height: 1.25rem;
+}
+
+a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--maincolor);
+}
+
+.myform-control {
+  font-size: 0.75rem;
+}
+
+.login {
+  margin-left: 2rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("../assets/op_actuators004.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.loginForm {
+  width: 18.125rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.logInInput {
+  /* width: 18.125rem; */
+  background-color: var(--subcolor);
+  border: none;
+  height: 4rem;
+  padding: 0 1rem 0 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+}
+
+.logInInput::placeholder {
+  font-size: 1rem;
+  font-family: "DillonMediumItalic", Helvetica, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+.pass {
+  position: relative;
+}
+
+.pass input {
+  /* width: 100%; */
+}
+
+.passButton {
+  opacity: 0.5;
+  position: absolute;
+  border: none;
+  right: 0.725rem;
+  width: 15%;
+  height: 4rem;
+  bottom: 2rem;
+  background-color: var(--subcolor);
+  background-image: url("../assets/icons_showHidePass.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.passButton:focus,
+.submitLogin:focus {
+  outline: 0;
+}
+
+.submitLogin {
+  border: none;
+  background-color: var(--maincolor);
+  color: white;
+  font-family: "DillonRegular", Helvetica, sans-serif;
+  width: 12rem;
+  height: 3rem;
+  /* padding: 0 0.1rem 0 1rem; */
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+#signup,
+#upHint {
+  display: none;
+}
+
+.hint {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--maincolor);
+}
+
+.masterElement {
+  opacity: 1;
+  transition: 0.5s 0.3s;
+}
+
+.profile {
+  margin: 0;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.5rem;
+}
+
+.profile p {
+  line-height: 1.8rem;
+}
+
+.profile a {
+  font-size: 1.2rem;
+  padding-left: 2.2rem;
+}
+
+.profile a:before {
+  position: absolute;
+  left: 0;
+  background-image: url("../assets/icons_logOut.svg");
+  background-size: 2rem 2rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  content: "";
+}
+
+.signInHeader {
+  font-family: "DillonRegular", Helvetica, sans-serif;
+  font-size: 5.625rem;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 8rem;
+}
+
+.mainHeader {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.introText {
+  position: absolute;
+  padding-top: 2rem;
+  left: 20.125rem;
+  margin-left: 8rem;
+  border-top: 2px solid black;
+  width: 22rem;
+  margin-left: ;
+}

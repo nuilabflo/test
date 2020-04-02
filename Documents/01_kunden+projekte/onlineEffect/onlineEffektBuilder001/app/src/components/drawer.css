@@ -1,0 +1,129 @@
+.drawer {
+  width: 500px;
+  height: 500px;
+  opacity: 1;
+  background-color: var(--maincolor);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* overflow-x: hidden; */
+}
+
+.toolBarWrapper {
+  position: absolute;
+  left: 7.25rem;
+  top: -3.25rem;
+  width: 16.75rem;
+  overflow-x: hidden;
+  height: 3rem;
+}
+
+.toolBar {
+  transition: margin-left 0.5s;
+  position: absolute;
+  top: 0;
+  margin-left: 44.25rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 34px;
+  width: 160px;
+}
+
+.tool {
+  height: 34px;
+  width: 32px;
+  margin-right: 6px;
+  background-repeat: no-repeat;
+  background-position: center -0.1rem;
+  /* box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; */
+  border-left: 2px solid rgba(0, 0, 0, 0);
+}
+
+.activeTool {
+  border-bottom: 2px solid var(--maincolor);
+}
+
+.pencil {
+  background-image: url("../assets/icons_pencil.svg");
+}
+
+.pointer {
+  display: none;
+  background-image: url("../assets/icons_pointer.svg");
+}
+
+.editors {
+  display: none;
+  flex-direction: row;
+}
+
+.deleter {
+  background-image: url("../assets/icons_deleter.svg");
+}
+
+.curver {
+  background-image: url("../assets/icons_curver.svg");
+}
+
+.drawCanvas {
+  background-color: white;
+}
+
+.cursorPencil {
+  cursor: url("../assets/icons_pencilCursor.cur") 0 16, auto;
+}
+
+.cursorPointer {
+  cursor: url("../assets/icons_pointerCursor.cur") 3 3, auto;
+}
+
+.cursorCurver {
+  cursor: url("../assets/icons_curverCursor.cur") 3 3, auto;
+}
+
+.cursorAdder {
+  cursor: url("../assets/icons_adderCursor.cur") 3 3, auto;
+}
+
+.cursorDeleter {
+  cursor: url("../assets/icons_deleterCursor.cur") 3 3, auto;
+}
+
+.pathHandler {
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 1.5px solid var(--maincolor);
+  background-color: white;
+  position: absolute;
+}
+
+.pathHandler:hover {
+  border-color: var(--hovercolor);
+}
+
+.pathHandlerActive {
+  background-color: var(--maincolor);
+}
+
+.pathHandlerActive:hover {
+  background-color: var(--hovercolor);
+}
+
+.handleBar {
+  border-radius: 5px;
+}
+
+.handleBarGroup {
+  display: none;
+}
+
+.pathHandlers {
+  display: none;
+}

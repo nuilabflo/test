@@ -1,0 +1,362 @@
+button {
+  background-color: var(--maincolor);
+  border: none;
+  height: 2rem;
+  color: white;
+  font-family: "DillonRegular", Helvetica, sans-serif;
+  font-size: 1.25rem;
+  /* margin: auto; */
+  margin-left: 0;
+  margin-right: 0.25rem;
+  width: 7rem;
+}
+
+button:hover {
+  background-color: var(--hovercolor);
+}
+
+button:focus {
+  outline: none;
+}
+
+.wrapper {
+  //max-width: auto;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  background-color: var(--subcolor);
+}
+
+.grid {
+  position: relative;
+  //width:100%;
+  display: flex;
+  margin-left: 23rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.topInput {
+  display: flex;
+  width: 900px;
+  //flex-direction: row;
+  //justify-content: space-between;
+  //width: 100%;
+  //overflow: hidden
+}
+.subElement {
+  opacity: 0;
+  transition: margin-left 0.5s, opacity 0.1s 0.1s;
+  width: auto;
+  align-items: flex-start;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.subElementBottom {
+  background-color: green;
+  margin-top: auto;
+  align-self: flex-end;
+}
+.rowselector {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.gridelements {
+  /* //margin-top:3em;
+  //margin-bottom:3em; */
+  width: 100%;
+  display: inline;
+  /* flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+}
+
+.gridElement {
+  position: relative;
+}
+
+.myFileInput {
+  display: none;
+}
+
+.envelopCanvas {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eCanvas {
+}
+
+.handle {
+  position: absolute;
+  box-sizing: content-box;
+  pointer-events: all;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  //border: 2px solid rgba(0,0,0,1);
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--maincolor);
+}
+
+.fileConsole {
+  pointer-events: none;
+  overflow: hidden;
+  position: absolute;
+  background-color: white;
+  /* padding-top: 15rem; */
+  height: 100%;
+  width: 20em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.fileConsoleButton {
+  pointer-events: all;
+  //background-color: blue;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.open {
+  background-image: url("../assets/open.svg");
+}
+
+.save {
+  background-image: url("../assets/save.svg");
+}
+
+.consoleButtonBar {
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+}
+
+.fileConsoleCloseButton {
+  pointer-events: all;
+  background-image: url("../assets/close.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.fileConsoleHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.fileConsoleContent {
+  pointer-events: all;
+  background-color: blue;
+  height: 100%;
+  width: 0;
+}
+
+.dataList {
+  pointer-events: all;
+  width: 100%;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.typeInput {
+  display: flex;
+  flex-direction: row;
+}
+
+.rangeButton {
+  width: 7rem;
+  height: 6.5rem;
+  border-top: 5px solid rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 5rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--maincolor);
+  font-size: 1rem;
+}
+
+.rangeButton:hover {
+  /* background-size: 5.25rem 5.25rem; */
+  /* background-color: red; */
+}
+
+.typeSelect {
+  width: 21.75rem;
+  position: relative;
+}
+
+.ranger {
+  position: absolute;
+  height: 6.5rem;
+  padding: 0;
+  /* //margin-left:22px; */
+  width: 100%;
+  opacity: 0;
+  margin: 0;
+}
+
+.rangeLabels {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.curve {
+  background-image: url("../assets/icons_curves.svg");
+}
+
+.file {
+  background-image: url("../assets/icons_files.svg");
+}
+
+.shape {
+  background-image: url("../assets/icons_shapes.svg");
+}
+
+.rangeActive {
+  border-top: 5px solid var(--maincolor);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.editorTools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 31.25rem;
+}
+
+.inputWrapper {
+  width: 23rem;
+  overflow: hidden;
+  /* overflow: scroll; */
+}
+
+.activeSub {
+  opacity: 1;
+}
+
+.inactiveSub {
+  opacity: 0;
+}
+
+/* #curveSub{
+  left:-50px;
+} */
+.drawerBox {
+  display: none;
+}
+
+.effectConsole {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.playConsole {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.effectConsoleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--maincolor);
+  height: 2rem;
+  width: 7rem;
+  /* margin: 3px; */
+  overflow: hidden;
+  background-size: 1.75rem;
+  background-repeat: no-repeat;
+  background-position: 0.3rem center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* padding-left: 2.3rem; */
+  color: white;
+  font-size: 1.25rem;
+  font-family: "DillonRegular" Helvetica sans-serif;
+}
+
+.effectConsoleButton:hover {
+  background-color: var(--hovercolor);
+}
+
+#playButton {
+  background-image: url("../assets/icons_play.svg");
+  margin: 27.2rem 0 0 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-size: 3rem;
+  border-radius: 2rem;
+  background-position: center;
+}
+
+#saveButton {
+  /* background-image: url("../assets/icons_save.svg"); */
+}
+
+#downloadButton {
+  display: none;
+  /* background-image: url("../assets/icons_save.svg"); */
+}
+
+.saveConsoleWrapper {
+  display: none;
+}
+
+.yAxis {
+  position: absolute;
+  width: 2rem;
+  top: 13.625rem;
+  right: 31.75rem;
+  height: 31.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: grey;
+  opacity: 0.5;
+  font-family: "DillonMedium";
+}
+
+.yAxis small {
+  padding: 0;
+  width: auto;
+  text-align: right;
+}
+
+.yAxis small:after {
+  /* content: " —"; */
+}

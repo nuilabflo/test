@@ -1,0 +1,163 @@
+.howTo {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+.howtoHeader {
+  font-family: "DillonMedium", Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.billBoard {
+  /* width: 40%;*/
+  padding: 2rem;
+  margin: auto;
+  font-size: 1.5rem;
+  background-color: var(--subcolor);
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+.explainer {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.explainer p {
+  line-height: 2rem;
+}
+
+.connectImage {
+  width: 15rem;
+  height: 4.875rem;
+  background-image: url("../assets/connectImage.svg");
+  background-repeat: no-repeat;
+}
+
+.browserSwitch {
+  width: 19rem;
+  height: 28.5rem;
+  background-image: url("../assets/browserSwitch.svg");
+  background-repeat: no-repeat;
+}
+
+.buttonBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.showButton {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  background-color: var(--maincolor);
+  opacity: 0.5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--maincolor);
+  height: 2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container:hover {
+  color: var(--hovercolor);
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  margin-left: 0.5rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  border: 0.125rem solid var(--maincolor);
+  background-color: var(--subcolor);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  border: 0.125rem solid var(--hovercolor);
+  background-color: var(--subcolor);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--maincolor);
+}
+
+.container:hover input:checked ~ .checkmark {
+  background-color: var(--hovercolor);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  right: 0.7125rem;
+  top: 0.45rem;
+  width: 0.3125rem;
+  height: 0.625rem;
+  border: solid white;
+  border-width: 0 0.1875rem 0.1875rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

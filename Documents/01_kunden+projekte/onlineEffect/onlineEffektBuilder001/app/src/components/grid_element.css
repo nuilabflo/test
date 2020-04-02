@@ -1,0 +1,30 @@
+.curveCanvas {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+  position: relative;
+  pointer-events: click;
+}
+
+.envelopelement {
+  position: absolute;
+  top: 0;
+}
+
+.canvas {
+  background-color: white;
+}
+/* .eCanvas{
+
+  width: 100px;
+  height: 100px;
+}
+
+.handle{
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color:red
+} */

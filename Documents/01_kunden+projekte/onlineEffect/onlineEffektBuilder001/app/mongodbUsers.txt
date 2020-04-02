@@ -1,0 +1,9 @@
+db.createUser(
+  {
+    user: "user001",
+    pwd: "userpass",
+    roles: [ { role: "readWrite", db: "effectTool"}]
+  }
+)
+
+mongo --port 27017 -u "user001" --authenticationDatabase "effectTool" -p

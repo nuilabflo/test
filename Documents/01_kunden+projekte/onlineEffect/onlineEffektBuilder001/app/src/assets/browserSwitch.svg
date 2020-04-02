@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="284" height="440.477" viewBox="0 0 284 440.477">
+  <g id="browserSwitch" transform="translate(-186 -360.164)">
+    <g id="Gruppe_343" data-name="Gruppe 343" transform="translate(-76.322 88.678)" opacity="0.4">
+      <path id="Pfad_318" data-name="Pfad 318" d="M-653.061,323.881a8.1,8.1,0,0,1-1.055,4l0,0-8.124,14.072c.34.019.683.03,1.028.03A18.107,18.107,0,0,0-643.1,323.881,18.054,18.054,0,0,0-644.457,317h-12.4A8.148,8.148,0,0,1-653.061,323.881Z" transform="translate(976.316 154.226)" fill="#1d1d1b"/>
+      <path id="Pfad_319" data-name="Pfad 319" d="M-738.454,318.28a8.151,8.151,0,0,1-7-3.991l-.012.007-8.132-14.085a18.019,18.019,0,0,0-2.959,9.921,18.11,18.11,0,0,0,15.691,17.946l6.2-10.731A8.1,8.1,0,0,1-738.454,318.28Z" transform="translate(1053.561 167.975)" fill="#1d1d1b"/>
+      <path id="Pfad_320" data-name="Pfad 320" d="M-721.506,264.961v0h16.264A18.106,18.106,0,0,0-721.415,255a18.076,18.076,0,0,0-14.34,7.052l6.2,10.738A8.156,8.156,0,0,1-721.506,264.961Z" transform="translate(1036.522 205)" fill="#1d1d1b"/>
+      <circle id="Ellipse_202" data-name="Ellipse 202" cx="6.5" cy="6.5" r="6.5" transform="translate(308.322 471.322)" fill="#1d1d1b"/>
+    </g>
+    <g id="Gruppe_348" data-name="Gruppe 348" transform="translate(-64 7)" opacity="0.4">
+      <path id="Pfad_322" data-name="Pfad 322" d="M8433.785,358.164v170.73" transform="translate(-8131 -5)" fill="none" stroke="#000" stroke-width="5"/>
+      <path id="Pfad_324" data-name="Pfad 324" d="M8429.681,427.635s-1.948,19.771,16.856,19.771h141.555s19.77-.521,19.77,21.157v55.013" transform="translate(-8127)" fill="none" stroke="#000" stroke-width="5"/>
+    </g>
+    <g id="Gruppe_349" data-name="Gruppe 349" transform="translate(-64 39)">
+      <g id="Gruppe_346" data-name="Gruppe 346" transform="translate(165.678 49.678)" opacity="0.241">
+        <path id="Pfad_318-2" data-name="Pfad 318" d="M-653.061,323.881a8.1,8.1,0,0,1-1.055,4l0,0-8.124,14.072c.34.019.683.03,1.028.03A18.107,18.107,0,0,0-643.1,323.881,18.054,18.054,0,0,0-644.457,317h-12.4A8.148,8.148,0,0,1-653.061,323.881Z" transform="translate(976.316 154.226)" fill="#1d1d1b"/>
+        <path id="Pfad_319-2" data-name="Pfad 319" d="M-738.454,318.28a8.151,8.151,0,0,1-7-3.991l-.012.007-8.132-14.085a18.019,18.019,0,0,0-2.959,9.921,18.11,18.11,0,0,0,15.691,17.946l6.2-10.731A8.1,8.1,0,0,1-738.454,318.28Z" transform="translate(1053.561 167.975)" fill="#1d1d1b"/>
+        <path id="Pfad_320-2" data-name="Pfad 320" d="M-721.506,264.961v0h16.264A18.106,18.106,0,0,0-721.415,255a18.076,18.076,0,0,0-14.34,7.052l6.2,10.738A8.156,8.156,0,0,1-721.506,264.961Z" transform="translate(1036.522 205)" fill="#1d1d1b"/>
+        <circle id="Ellipse_202-2" data-name="Ellipse 202" cx="6.5" cy="6.5" r="6.5" transform="translate(308.322 471.322)" fill="#1d1d1b"/>
+      </g>
+      <g id="Gruppe_347" data-name="Gruppe 347" transform="translate(511.946 -185.412) rotate(45)">
+        <path id="Pfad_325" data-name="Pfad 325" d="M8611.785,500v59.362" transform="translate(-8131 -2)" fill="none" stroke="#ede9ff" stroke-width="6"/>
+        <path id="Pfad_326" data-name="Pfad 326" d="M8611.785,500v59.362" transform="translate(1010.466 -8084.104) rotate(90)" fill="none" stroke="#ede9ff" stroke-width="6"/>
+      </g>
+    </g>
+    <text id="Chrome_Browser" data-name="Chrome Browser" transform="translate(186 594.641)" font-size="16" font-family="FSDillon, FS Dillon" opacity="0.418"><tspan x="5.836" y="13">Chrome Browser</tspan></text>
+    <text id="other_Browsers" data-name="other Browsers" transform="translate(364 594.641)" font-size="16" font-family="FSDillon, FS Dillon" opacity="0.418"><tspan x="10.18" y="13">other Browsers</tspan></text>
+    <g id="Gruppe_350" data-name="Gruppe 350" transform="translate(-40 -2)" opacity="0.4">
+      <path id="Pfad_327" data-name="Pfad 327" d="M8433.785,435.25v80.667" transform="translate(-7977 189)" fill="none" stroke="#000" stroke-width="5"/>
+      <path id="Pfad_323" data-name="Pfad 323" d="M8433.785,435.25V613.641" transform="translate(-8155 189)" fill="none" stroke="#000" stroke-width="5"/>
+      <path id="Pfad_328" data-name="Pfad 328" d="M8429.681,523.575s-1.948-19.771,16.856-19.771h141.555s19.77.521,19.77-21.157V427.635" transform="translate(-8151 215)" fill="none" stroke="#000" stroke-width="5"/>
+    </g>
+  </g>
+</svg>
